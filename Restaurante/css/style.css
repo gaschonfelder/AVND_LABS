@@ -1,0 +1,553 @@
+/* ==========================================================================
+   Gula-Gula — variáveis de tema
+   Troque estas variáveis para adaptar a paleta/fontes para outro cliente.
+   ========================================================================== */
+:root {
+  --color-primary: #8a2f23;       /* vermelho terracota - cor principal */
+  --color-primary-dark: #5a1e17;
+  --color-secondary: #e8c07d;     /* dourado suave */
+  --color-bg: #fffaf2;
+  --color-bg-alt: #f5ead9;
+  --color-text: #2b1c15;
+  --color-text-light: #6b5b4f;
+  --color-white: #ffffff;
+  --color-whatsapp: #25d366;
+  --color-whatsapp-dark: #1da851;
+  --color-star: #e8b84b;
+
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --container-width: 1180px;
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(43, 28, 21, 0.12);
+  --transition: 0.3s ease;
+}
+
+/* ==========================================================================
+   Reset básico
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body, h1, h2, h3, p, ul, figure { margin: 0; padding: 0; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+button { font: inherit; cursor: pointer; border: none; background: none; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1, h2, h3 { font-family: var(--font-heading); }
+
+/* ==========================================================================
+   Botões
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+  white-space: nowrap;
+}
+.btn:hover { transform: translateY(-2px); }
+
+.btn--primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: var(--shadow);
+}
+.btn--primary:hover { background: var(--color-primary-dark); }
+
+.btn--ghost {
+  background: transparent;
+  color: var(--color-white);
+  border: 2px solid var(--color-white);
+}
+.btn--ghost:hover { background: rgba(255,255,255,0.15); }
+
+.btn--whatsapp {
+  background: var(--color-whatsapp);
+  color: var(--color-white);
+}
+.btn--whatsapp:hover { background: var(--color-whatsapp-dark); }
+
+.btn--small {
+  padding: 9px 16px;
+  font-size: 0.82rem;
+}
+
+.icon { width: 18px; height: 18px; flex-shrink: 0; }
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  width: 100%;
+  background: rgba(255, 250, 242, 0.75);
+  transition: background var(--transition), box-shadow var(--transition), backdrop-filter var(--transition);
+}
+.site-header.is-scrolled {
+  background: rgba(255, 250, 242, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 16px rgba(43, 28, 21, 0.08);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  gap: 12px;
+}
+
+.logo__img { height: 40px; width: auto; }
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Nav - mobile drawer */
+.nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: min(78vw, 320px);
+  background: var(--color-bg);
+  box-shadow: -8px 0 30px rgba(0,0,0,0.15);
+  transform: translateX(100%);
+  transition: transform var(--transition);
+  z-index: 210;
+  padding: 90px 28px 28px;
+}
+.nav.is-open { transform: translateX(0); }
+
+.nav__list { display: flex; flex-direction: column; gap: 22px; }
+.nav__link {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--color-text);
+}
+.nav__link:hover { color: var(--color-primary); }
+
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition);
+  /* Precisa ficar abaixo do z-index do .site-header (200): como o header
+     forma seu próprio contexto de empilhamento (sticky + z-index), o .nav
+     (dentro dele) nunca conseguiria superar um overlay com z-index maior
+     que o do header, mesmo tendo z-index mais alto que o overlay. */
+  z-index: 150;
+}
+.nav-overlay.is-visible { opacity: 1; visibility: visible; }
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 34px;
+  height: 34px;
+  padding: 6px;
+}
+.hamburger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--color-text);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+.hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (min-width: 900px) {
+  .nav {
+    position: static;
+    height: auto;
+    width: auto;
+    background: transparent;
+    box-shadow: none;
+    transform: none;
+    padding: 0;
+    transition: none;
+  }
+  .nav__list { flex-direction: row; gap: 32px; }
+  .nav-overlay { display: none; }
+  .hamburger { display: none; }
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 480px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  color: var(--color-white);
+}
+
+.hero__slides {
+  position: absolute;
+  inset: 0;
+}
+.hero__slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+.hero__slide.is-active { opacity: 1; }
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(43,28,21,0.35) 0%, rgba(43,28,21,0.75) 100%);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 76px;
+}
+
+.hero__title {
+  font-size: clamp(2rem, 7vw, 3.4rem);
+  line-height: 1.15;
+  margin-bottom: 14px;
+  max-width: 20ch;
+}
+.hero__subtitle {
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  max-width: 46ch;
+  margin-bottom: 26px;
+  color: #f2e6d8;
+}
+.hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.hero__dots {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2;
+  display: flex;
+  gap: 8px;
+}
+.hero__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.45);
+  transition: background var(--transition), transform var(--transition);
+}
+.hero__dot.is-active { background: var(--color-white); transform: scale(1.2); }
+
+@media (min-width: 900px) {
+  .hero__dots { right: 40px; bottom: 40px; }
+}
+
+/* ==========================================================================
+   Seções genéricas
+   ========================================================================== */
+.section { padding: 70px 0; }
+.section__header { text-align: center; max-width: 640px; margin: 0 auto 40px; }
+.section__title { font-size: clamp(1.8rem, 5vw, 2.4rem); color: var(--color-primary-dark); margin-bottom: 10px; }
+.section__subtitle { color: var(--color-text-light); font-size: 1.05rem; }
+
+/* ==========================================================================
+   Cardápio - slider infinito
+   ========================================================================== */
+.menu-section { background: var(--color-bg-alt); }
+
+.menu-slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 8px;
+}
+
+.menu-slider__viewport {
+  overflow: hidden;
+  flex: 1;
+}
+
+.menu-slider__track {
+  display: flex;
+  gap: 20px;
+  will-change: transform;
+  cursor: grab;
+  touch-action: pan-y;
+}
+.menu-slider__track.is-dragging { cursor: grabbing; }
+.menu-slider__track.is-animating { transition: transform 0.45s ease; }
+
+.menu-card {
+  flex: 0 0 auto;
+  width: 240px;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  user-select: none;
+}
+.menu-card__img-wrap { aspect-ratio: 4 / 3; overflow: hidden; }
+.menu-card__img { width: 100%; height: 100%; object-fit: cover; }
+.menu-card__body { padding: 16px 18px 20px; }
+.menu-card__name { font-size: 1.05rem; margin-bottom: 6px; color: var(--color-primary-dark); }
+.menu-card__desc { font-size: 0.88rem; color: var(--color-text-light); margin-bottom: 12px; min-height: 2.6em; }
+.menu-card__price { font-weight: 600; color: var(--color-primary); font-size: 1.05rem; }
+
+@media (min-width: 600px) {
+  .menu-card { width: 270px; }
+}
+
+.menu-slider__arrow {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--color-primary);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+.menu-slider__arrow svg { width: 22px; height: 22px; }
+.menu-slider__arrow:hover { background: var(--color-primary); color: var(--color-white); }
+
+/* ==========================================================================
+   Sobre
+   ========================================================================== */
+.about__content { max-width: 780px; margin: 0 auto 40px; }
+.about__content p { margin-bottom: 16px; color: var(--color-text); }
+
+.about__gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+.about__gallery-item {
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  box-shadow: var(--shadow);
+}
+.about__gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+.about__gallery-item:hover img { transform: scale(1.06); }
+.about__gallery-btn {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 700px) {
+  .about__gallery { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ==========================================================================
+   Depoimentos
+   ========================================================================== */
+.testimonials-section { background: var(--color-bg-alt); }
+
+.testimonials { max-width: 720px; margin: 0 auto; }
+.testimonials__track { position: relative; min-height: 220px; }
+
+.testimonial {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 30px 26px;
+  text-align: center;
+}
+.testimonial.is-active { opacity: 1; visibility: visible; position: relative; }
+
+.testimonial__stars { color: var(--color-star); font-size: 1.1rem; margin-bottom: 12px; letter-spacing: 2px; }
+.testimonial__text { font-style: italic; color: var(--color-text); margin-bottom: 16px; font-size: 1.02rem; }
+.testimonial__name { font-weight: 600; color: var(--color-primary-dark); }
+
+.testimonials__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 22px;
+}
+.testimonials__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #d8c3a5;
+  transition: background var(--transition), transform var(--transition);
+}
+.testimonials__dot.is-active { background: var(--color-primary); transform: scale(1.2); }
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.site-footer {
+  background: var(--color-primary-dark);
+  color: #f2e6d8;
+  padding: 60px 0 0;
+}
+.footer__grid {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr;
+}
+.footer__heading {
+  font-size: 1.2rem;
+  color: var(--color-secondary);
+  margin-bottom: 16px;
+}
+.footer__text { margin-bottom: 10px; color: #e8d9c8; }
+.footer__col .btn--whatsapp { margin-top: 6px; margin-bottom: 18px; }
+
+.footer__hours { display: flex; flex-direction: column; gap: 8px; }
+.footer__hours li { display: flex; justify-content: space-between; gap: 10px; color: #e8d9c8; font-size: 0.95rem; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 8px; }
+.footer__hours li span:first-child { font-weight: 600; color: var(--color-white); }
+
+.footer__map iframe { border-radius: var(--radius); display: block; }
+
+.footer__social { display: flex; gap: 14px; }
+.footer__social a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+}
+.footer__social a:hover { background: var(--color-secondary); color: var(--color-primary-dark); }
+.footer__social svg { width: 20px; height: 20px; }
+
+.footer__bottom {
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  text-align: center;
+  font-size: 0.85rem;
+  color: #cbb69f;
+}
+
+@media (min-width: 900px) {
+  .footer__grid { grid-template-columns: 1fr 1fr 1.2fr; }
+}
+
+/* ==========================================================================
+   Botão flutuante WhatsApp
+   ========================================================================== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  width: 58px;
+  height: 58px;
+  background: var(--color-whatsapp);
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  z-index: 300;
+  transition: transform var(--transition), background var(--transition);
+}
+.whatsapp-float:hover { background: var(--color-whatsapp-dark); transform: scale(1.08); }
+.whatsapp-float svg { width: 30px; height: 30px; }
+
+/* ==========================================================================
+   Lightbox
+   ========================================================================== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  z-index: 400;
+  padding: 60px 20px 20px;
+}
+.lightbox[hidden] { display: none; }
+.lightbox__img {
+  max-width: 100%;
+  max-height: 80vh;
+  max-height: 80svh; /* vh conta a barra de endereço do mobile como área visível; svh não */
+  min-width: 0; /* item flex tem min-width:auto = tamanho intrínseco da imagem, o que anula o max-width acima */
+  border-radius: 8px;
+}
+.lightbox__close {
+  position: fixed;
+  top: max(14px, env(safe-area-inset-top));
+  right: max(14px, env(safe-area-inset-right));
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  color: var(--color-white);
+  line-height: 1;
+}
+
+/* ==========================================================================
+   Utilitários
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}

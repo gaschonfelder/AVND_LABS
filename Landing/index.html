@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seu Nome — Sites e landing pages para negócios locais em Sorocaba/SP</title>
+  <meta name="description" content="Desenvolvo sites e landing pages para negócios locais em Sorocaba/SP e construo meus próprios produtos digitais, como Presentim e Várzea. Veja projetos no ar e modelos prontos pra adaptar.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0e14'/%3E%3Cpath d='M9 21 L16 9 L23 21' stroke='%232dd8c5' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Playfair+Display:wght@600&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="site-nav" aria-label="Navegação principal">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#hero"><img src="images/Logo_Branco.png" alt="AVND Labs" class="nav__brand-logo"></a>
+      <ul class="nav__links">
+        <li><a class="nav__link" href="#hero">Início</a></li>
+        <li><a class="nav__link" href="#projetos">Projetos</a></li>
+        <li><a class="nav__link" href="#mocks">Modelos</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="hero">
+    <canvas class="hero__canvas" id="hero-particles" aria-hidden="true"></canvas>
+    <div class="hero__scrim" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <p class="hero__eyebrow">AVND LABS</p>
+      <h1 class="hero__headline">
+        Presença digital que inspira confiança.
+      </h1>
+      <p class="hero__subtitle">
+        Desenvolvemos sites que representam a qualidade do seu negócio. Com design moderno, carregamento rápido e foco na experiência do usuário, ajudamos sua empresa a conquistar mais confiança e gerar novas oportunidades.
+      </p>
+      <a class="btn btn--cta" id="hero-whatsapp" href="#" target="_blank" rel="noopener">
+        <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.45 1.33 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2Zm0 18.2h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.24 8.24 0 1 1 6.99 3.86Zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.4-.12-.56.13-.17.25-.65.81-.8.97-.15.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.44.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.4-.42-.56-.42h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08s.9 2.41 1.02 2.58c.12.17 1.77 2.7 4.28 3.78.6.26 1.06.41 1.43.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.2-.58.2-1.08.14-1.18-.06-.1-.23-.16-.48-.28Z" />
+        </svg>
+        WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <!-- PROJETOS JÁ REALIZADOS -->
+  <section class="projects" id="projetos" aria-labelledby="projects-title">
+    <div class="section-head">
+      <h2 id="projects-title" class="section-title">Experiência na prática</h2>
+      <p class="section-subtitle">Mais do que protótipos: estes são projetos desenvolvidos por mim e colocados em produção, refletindo meu cuidado com design, performance e experiência do usuário.</p>
+    </div>
+    <div class="split-screen" id="split-screen"><!-- preenchido via script.js --></div>
+  </section>
+
+  <!-- MOCKS -->
+  <section class="mocks" id="mocks" aria-labelledby="mocks-title">
+    <div class="section-head">
+      <h2 id="mocks-title" class="section-title">Inspire-se em alguns modelos</h2>
+      <p class="section-subtitle">Clínicas, restaurantes, oficinas e muito mais. Escolha o estilo que mais combina com sua empresa e adaptamos tudo para criar um site único.</p>
+    </div>
+    <div class="card-grid" id="mocks-grid"><!-- preenchido via script.js --></div>
+  </section>
+
+  <footer class="site-footer">
+    <p>Seu negócio merece um site à altura.</p>
+    <a class="btn btn--cta btn--footer" id="footer-whatsapp" href="#" target="_blank" rel="noopener">Entre em contato</a>
+    <p class="site-footer__meta">© <span id="year"></span> AVND LABS</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/particles.js"></script>
+</body>
+
+</html>

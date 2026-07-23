@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <rect width="1600" height="1000" fill="#161c26"/>
+  <rect x="24" y="24" width="1552" height="952" rx="16" fill="none" stroke="#a8e063" stroke-width="6" stroke-dasharray="18 14"/>
+  <text x="800" y="460" text-anchor="middle" font-family="system-ui, sans-serif" font-size="46" font-weight="700" fill="#eef1f6">Substitua por</text>
+  <text x="800" y="530" text-anchor="middle" font-family="system-ui, sans-serif" font-size="52" font-weight="700" fill="#a8e063">varzea-screenshot.jpg</text>
+  <text x="800" y="600" text-anchor="middle" font-family="system-ui, sans-serif" font-size="32" fill="#9aa5b4">Screenshot real do Várzea</text>
+  <text x="800" y="646" text-anchor="middle" font-family="system-ui, sans-serif" font-size="32" fill="#9aa5b4">Tamanho sugerido: 1600×1000px (paisagem)</text>
+</svg>

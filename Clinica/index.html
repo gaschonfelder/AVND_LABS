@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--
+    Estas tags (title, description, og:*) precisam ser atualizadas manualmente para
+    bater com CLINIC/HERO em js/main.js sempre que este template for adaptado para
+    outra clínica. Não dá pra centralizar via JS porque crawlers de redes sociais
+    (WhatsApp, Facebook, Twitter/X) leem o HTML estático e não executam JavaScript
+    ao gerar o preview do link. O <title> da aba do navegador é atualizado via JS
+    (document.title, ver renderClinicInfo em main.js) como reforço, mas o texto
+    abaixo é o que efetivamente aparece nos previews de compartilhamento.
+  -->
+  <title>Clínica Essence | Beleza natural, cuidado de verdade.</title>
+  <meta name="description" content="Clínica de estética e saúde dedicada a cuidar da sua beleza com atendimento personalizado, tecnologia de ponta e muito carinho." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Clínica Essence | Beleza natural, cuidado de verdade." />
+  <meta property="og:description" content="Clínica de estética e saúde dedicada a cuidar da sua beleza com atendimento personalizado, tecnologia de ponta e muito carinho." />
+  <meta property="og:image" content="images/Dra (1).png" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <link rel="icon" href="images/favicon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+
+  <!-- HEADER -->
+  <header class="site-header" id="site-header">
+    <div class="container site-header__inner">
+      <a href="#inicio" class="site-header__logo">
+        <img src="images/logo.png" data-clinic-logo-alt alt="Logo da clínica" width="40" height="40" loading="lazy" />
+        <span data-clinic-name>Clínica</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Navegação principal">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#tratamentos">Tratamentos</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <div class="site-header__actions">
+        <a
+          href="#"
+          class="btn btn--whatsapp btn--sm site-header__cta"
+          data-whatsapp
+          data-whatsapp-message="Olá! Gostaria de agendar uma avaliação."
+        >
+          <span data-icon-whatsapp aria-hidden="true"></span>
+          Agendar
+        </a>
+        <button
+          type="button"
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="mobile-drawer"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
+  <div class="mobile-drawer" id="mobile-drawer">
+    <div class="mobile-drawer__header">
+      <button type="button" class="mobile-drawer__close" id="menu-close" aria-label="Fechar menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+    </div>
+    <nav class="mobile-drawer__nav" aria-label="Navegação mobile">
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#tratamentos">Tratamentos</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a
+      href="#"
+      class="btn btn--whatsapp btn--block mobile-drawer__cta"
+      data-whatsapp
+      data-whatsapp-message="Olá! Gostaria de agendar uma avaliação."
+    >
+      <span data-icon-whatsapp aria-hidden="true"></span>
+      Falar no WhatsApp
+    </a>
+  </div>
+
+  <main id="main-content">
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="hero__badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke-linejoin="round" />
+            </svg>
+            Atendimento personalizado e acolhedor
+          </span>
+          <h1 class="hero__title">Cuidar da sua <em>beleza</em> é cuidar de você</h1>
+          <p class="hero__text" data-clinic-description>
+            Descrição curta da clínica.
+          </p>
+          <div class="hero__professional">
+            <span class="hero__professional-name" data-professional-name>Nome da profissional</span>
+            <span class="hero__professional-role" data-professional-role>Especialidade</span>
+          </div>
+          <div class="hero__ctas">
+            <a
+              href="#"
+              class="btn btn--primary"
+              data-whatsapp
+              data-whatsapp-message="Olá! Gostaria de agendar uma avaliação."
+            >
+              Agendar avaliação
+            </a>
+            <a
+              href="#"
+              class="btn btn--whatsapp"
+              data-whatsapp
+              data-whatsapp-message="Olá! Gostaria de falar com a clínica."
+            >
+              <span data-icon-whatsapp aria-hidden="true"></span>
+              Falar no WhatsApp
+            </a>
+          </div>
+        </div>
+        <div class="hero__media">
+          <img
+            class="hero__image"
+            data-hero-image
+            src="images/Dra (1).png"
+            alt="Ambiente acolhedor da clínica durante um atendimento"
+            width="640"
+            height="480"
+          />
+          <div class="hero__trust">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke-linejoin="round" />
+            </svg>
+            <span class="hero__trust-text">Atendimento seguro e personalizado</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAIXA DE DESTAQUES (TICKER) -->
+    <div class="ticker" aria-label="Destaques da clínica">
+      <div class="ticker-track" id="ticker-track-1"></div>
+      <div class="ticker-track" id="ticker-track-2" aria-hidden="true"></div>
+    </div>
+
+    <!-- TRATAMENTOS -->
+    <section class="section" id="tratamentos">
+      <div class="container">
+        <div class="section__header fade-in">
+          <span class="section__eyebrow">Nossos serviços</span>
+          <h2 class="section__title">Tratamentos</h2>
+          <p class="section__subtitle" style="margin-left:auto;margin-right:auto;">
+            Conheça os tratamentos pensados para realçar sua beleza natural com segurança e conforto.
+          </p>
+        </div>
+        <div class="treatments-grid" id="treatments-grid"></div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="section section-bg-alt" id="sobre">
+      <div class="container">
+        <div class="about__grid">
+          <div class="fade-in">
+            <span class="section__eyebrow">Nossa história</span>
+            <h2 class="section__title">Sobre a <span data-clinic-name>Clínica</span></h2>
+            <div class="about__text" id="about-text"></div>
+          </div>
+          <div class="about-gallery" id="about-gallery"></div>
+        </div>
+
+        <div class="differentials" id="about-differentials"></div>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section class="section" id="depoimentos">
+      <div class="container">
+        <div class="section__header fade-in">
+          <span class="section__eyebrow">O que dizem sobre nós</span>
+          <h2 class="section__title">Depoimentos</h2>
+          <p class="section__subtitle" style="margin-left:auto;margin-right:auto;">
+            A satisfação de quem já viveu a experiência Essence.
+          </p>
+        </div>
+
+        <div class="testimonials-carousel fade-in">
+          <div class="testimonials-track" id="testimonials-track"></div>
+        </div>
+        <div class="testimonials-dots" id="testimonials-dots"></div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="section section-bg-alt" id="contato">
+      <div class="container">
+        <div class="section__header fade-in">
+          <span class="section__eyebrow">Fale conosco</span>
+          <h2 class="section__title">Entre em Contato</h2>
+          <p class="section__subtitle" style="margin-left:auto;margin-right:auto;">
+            Preencha o formulário abaixo e agende sua avaliação ou tire suas dúvidas.
+          </p>
+        </div>
+
+        <form class="contact-form contact-form--standalone fade-in" id="contact-form" novalidate>
+          <div class="form-field">
+            <label for="form-name">Nome</label>
+            <input type="text" id="form-name" name="name" autocomplete="name" />
+            <p class="form-error" data-error-for="name" role="alert"></p>
+          </div>
+          <div class="form-field">
+            <label for="form-phone">Telefone</label>
+            <input type="tel" id="form-phone" name="phone" autocomplete="tel" />
+            <p class="form-error" data-error-for="phone" role="alert"></p>
+          </div>
+          <div class="form-field">
+            <label for="form-email">E-mail</label>
+            <input type="email" id="form-email" name="email" autocomplete="email" />
+            <p class="form-error" data-error-for="email" role="alert"></p>
+          </div>
+          <div class="form-field">
+            <label for="form-treatment">Tratamento de interesse</label>
+            <select id="form-treatment" name="treatment">
+              <option value="">Selecione um tratamento</option>
+            </select>
+            <p class="form-error" data-error-for="treatment" role="alert"></p>
+          </div>
+          <div class="form-field form-field--full">
+            <label for="form-message">Mensagem (opcional)</label>
+            <textarea id="form-message" name="message"></textarea>
+          </div>
+          <button type="submit" class="btn btn--whatsapp btn--block form-field--full">
+            <span data-icon-whatsapp aria-hidden="true"></span>
+            Enviar via WhatsApp
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__logo" data-clinic-name>Clínica</p>
+          <p class="footer__description" data-clinic-description>Descrição curta da clínica.</p>
+          <div class="footer__socials">
+            <a class="footer__social-link" data-social-instagram href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram da clínica">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.2" cy="6.8" r="1" />
+              </svg>
+            </a>
+            <a class="footer__social-link" data-social-facebook href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook da clínica">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                <path d="M15 4h-2a4 4 0 0 0-4 4v3H7v3h2v6h3v-6h2.5l.5-3H12V8.5a1 1 0 0 1 1-1H15V4z" stroke-linejoin="round" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <p class="footer__heading">Links rápidos</p>
+          <nav class="footer__links" aria-label="Links rápidos do rodapé">
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#tratamentos">Tratamentos</a>
+            <a href="#depoimentos">Depoimentos</a>
+            <a href="#contato">Contato</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="footer__heading">Contato</p>
+          <div class="footer__contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <path d="M12 22s7-7.58 7-12.5A7 7 0 0 0 5 9.5C5 14.42 12 22 12 22z" stroke-linejoin="round" />
+              <circle cx="12" cy="9.5" r="2.3" />
+            </svg>
+            <span data-contact-address>Endereço da clínica</span>
+          </div>
+          <div class="footer__contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <path d="M6.6 3h3l1.4 4.5-2.3 1.6a13 13 0 0 0 6.2 6.2l1.6-2.3L21 14.4v3a2 2 0 0 1-2.2 2C11 19 5 13 4.6 5.2A2 2 0 0 1 6.6 3z" stroke-linejoin="round" />
+            </svg>
+            <span data-contact-phone>Telefone</span>
+          </div>
+        </div>
+
+        <div>
+          <p class="footer__heading">Horário</p>
+          <ul class="hours-list" id="footer-hours-list"></ul>
+          <a
+            href="#"
+            class="btn btn--whatsapp btn--sm"
+            style="margin-top: var(--space-4);"
+            data-whatsapp
+            data-whatsapp-message="Olá! Gostaria de agendar uma avaliação."
+          >
+            <span data-icon-whatsapp aria-hidden="true"></span>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__map">
+        <!-- Placeholder: substituir pelo src real do Google Maps (ver CONTACT.mapsEmbedSrc em js/main.js) -->
+        <iframe
+          data-maps-embed
+          title="Localização da clínica no mapa"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; <span data-current-year></span> <span data-clinic-name>Clínica</span>. Todos os direitos reservados.</p>
+        <a href="#politica-de-privacidade">Política de Privacidade</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <a
+    href="#"
+    class="whatsapp-float"
+    data-whatsapp
+    data-whatsapp-message="Olá! Gostaria de agendar uma avaliação."
+    aria-label="Falar no WhatsApp"
+  >
+    <span data-icon-whatsapp aria-hidden="true"></span>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

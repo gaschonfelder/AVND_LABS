@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!--
+    Estas tags (title, description, og:*, JSON-LD) precisam ser atualizadas manualmente
+    para bater com WORKSHOP/HERO/CONTACT em js/main.js sempre que este template for
+    adaptado para outra oficina. Não dá pra centralizar via JS porque crawlers de redes
+    sociais e buscadores leem o HTML estático e não executam JavaScript de forma
+    garantida ao gerar preview de link ou indexar dados estruturados. O <title> da aba
+    do navegador é atualizado via JS (document.title, ver renderWorkshopInfo em main.js)
+    como reforço, mas o texto abaixo é o que efetivamente aparece nos previews e no rico
+    snippet de busca.
+  -->
+  <title>Oficina Motor Forte | Seu veículo em boas mãos.</title>
+  <meta name="description" content="Mecânica e elétrica automotiva com qualidade, transparência e agilidade. Orçamento sem surpresas, diagnóstico computadorizado e garantia em todos os serviços." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Oficina Motor Forte | Seu veículo em boas mãos." />
+  <meta property="og:description" content="Mecânica e elétrica automotiva com qualidade, transparência e agilidade. Orçamento sem surpresas, diagnóstico computadorizado e garantia em todos os serviços." />
+  <meta property="og:image" content="images/hero.jpg" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <link rel="icon" href="images/favicon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Dados estruturados locais (Schema.org / AutoRepair) - manter sincronizado manualmente com WORKSHOP/CONTACT/HOURS em js/main.js -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "Oficina Motor Forte",
+    "image": "images/hero.jpg",
+    "telephone": "+55-11-4444-5555",
+    "email": "contato@motorforte.com.br",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Industrial, 850 - Vila Operária",
+      "addressLocality": "São Paulo",
+      "addressRegion": "SP",
+      "postalCode": "04567-000",
+      "addressCountry": "BR"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday"],
+        "opens": "08:00",
+        "closes": "13:00"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+
+  <!-- HEADER -->
+  <header class="site-header" id="site-header">
+    <div class="container site-header__inner">
+      <a href="#inicio" class="site-header__logo">
+        <img src="images/logo.png" data-workshop-logo-alt alt="Logo da oficina" width="42" height="42" loading="lazy" />
+        <span data-workshop-name>Oficina</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Navegação principal">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#avaliacoes">Avaliações</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <div class="site-header__actions">
+        <a
+          href="#"
+          class="btn btn--primary btn--sm site-header__cta"
+          data-whatsapp
+          data-whatsapp-message="Olá! Acessei o site da oficina e gostaria de solicitar um orçamento para o meu veículo."
+        >
+          Orçamento
+        </a>
+        <button
+          type="button"
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="mobile-drawer"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
+  <div class="mobile-drawer" id="mobile-drawer">
+    <div class="mobile-drawer__header">
+      <button type="button" class="mobile-drawer__close" id="menu-close" aria-label="Fechar menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+    </div>
+    <nav class="mobile-drawer__nav" aria-label="Navegação mobile">
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#avaliacoes">Avaliações</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a
+      href="#"
+      class="btn btn--whatsapp btn--block mobile-drawer__cta"
+      data-whatsapp
+      data-whatsapp-message="Olá! Acessei o site da oficina e gostaria de solicitar um orçamento para o meu veículo."
+    >
+      <span data-icon-whatsapp aria-hidden="true"></span>
+      Falar no WhatsApp
+    </a>
+  </div>
+
+  <main id="main-content">
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="hero__badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke-linejoin="round" />
+            </svg>
+            Mecânica e elétrica automotiva
+          </span>
+          <h1 class="hero__title">Seu veículo em <em>boas mãos</em></h1>
+          <p class="hero__text" data-workshop-description>
+            Descrição curta da oficina.
+          </p>
+          <div class="hero__owner">
+            <span class="hero__owner-name" data-owner-name>Nome do responsável</span>
+            <span class="hero__owner-role" data-owner-role>Cargo</span>
+          </div>
+          <div class="hero__ctas">
+            <a
+              href="#"
+              class="btn btn--primary"
+              data-whatsapp
+              data-whatsapp-message="Olá! Gostaria de solicitar um orçamento para o meu veículo."
+            >
+              Solicitar orçamento
+            </a>
+            <a
+              href="#"
+              class="btn btn--whatsapp"
+              data-whatsapp
+              data-whatsapp-message="Olá! Acessei o site da oficina e gostaria de falar com a equipe."
+            >
+              <span data-icon-whatsapp aria-hidden="true"></span>
+              Falar no WhatsApp
+            </a>
+          </div>
+          <div class="hero__badges" id="hero-badges"></div>
+        </div>
+        <div class="hero__media">
+          <img
+            class="hero__image"
+            data-hero-image
+            src="images/hero.jpg"
+            alt="Profissional realizando manutenção em um veículo na oficina"
+            width="640"
+            height="480"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section class="section" id="servicos">
+      <div class="container">
+        <div class="section__header fade-in">
+          <span class="section__eyebrow">O que fazemos</span>
+          <h2 class="section__title">Nossos Serviços</h2>
+          <p class="section__subtitle" style="margin-left:auto;margin-right:auto;">
+            Mecânica e elétrica automotiva completa, com diagnóstico preciso e orçamento aprovado antes da execução.
+          </p>
+        </div>
+        <div class="services-grid" id="services-grid"></div>
+      </div>
+    </section>
+
+    <!-- DIAGNÓSTICO E ORÇAMENTO -->
+    <section class="section section-bg-alt" id="diagnostico">
+      <div class="container">
+        <div class="section__header fade-in">
+          <span class="section__eyebrow">Como funciona</span>
+          <h2 class="section__title">Diagnóstico e Orçamento</h2>
+          <p class="section__subtitle" style="margin-left:auto;margin-right:auto;">
+            Um processo simples e transparente, do primeiro contato até a entrega do seu veículo.
+          </p>
+        </div>
+        <div class="process-list" id="process-list"></div>
+        <p class="process-note fade-in">
+          Nenhum serviço é iniciado sem a sua aprovação do orçamento. Você decide antes de qualquer execução.
+        </p>
+        <div class="process-actions fade-in">
+          <a
+            href="#"
+            class="btn btn--primary"
+            data-whatsapp
+            data-whatsapp-message="Olá! Gostaria de solicitar uma avaliação para o meu veículo."
+          >
+            Solicitar avaliação
+          </a>
+          <a
+            href="#"
+            class="btn btn--outline"
+            data-whatsapp
+            data-whatsapp-message="Olá! Gostaria de tirar uma dúvida sobre o atendimento da oficina."
+          >
+            <span data-icon-whatsapp aria-hidden="true"></span>
+            Enviar mensagem
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="section" id="sobre">
+      <div class="container">
+        <div class="about__grid">
+          <div class="fade-in">
+            <span class="section__eyebrow">Nossa história</span>
+            <h2 class="section__title">Sobre a <span data-workshop-name>Oficina</span></h2>
+            <p class="about__founded">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3.5 2" />
+              </svg>
+              Desde <span data-founded-year>2011</span> · <span data-years-experience>0</span>+ anos de experiência
+            </p>
+            <div class="about__text" id="about-text"></div>
+            <div class="about__vehicle-types" id="about-vehicle-types"></div>
+          </div>
+          <div class="about-gallery" id="about-gallery"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIFERENCIAIS -->
+    <section class="section section-bg-alt" id="diferenciais">
+      <div class="container">
+        <div class="section__header fade-in">
+          <span class="section__eyebrow">Por que escolher a gente</span>
+          <h2 class="section__title">Nossos Diferenciais</h2>
+          <p class="section__subtitle" style="margin-left:auto;margin-right:auto;">
+            Tudo o que fazemos para você ter tranquilidade antes, durante e depois do serviço.
+          </p>
+        </div>
+        <div class="differentials-grid" id="differentials-grid"></div>
+      </div>
+    </section>
+
+    <!-- MARCAS ATENDIDAS -->
+    <section class="section" id="marcas">
+      <div class="container">
+        <div class="section__header fade-in">
+          <span class="section__eyebrow">Marcas atendidas</span>
+          <h2 class="section__title">Trabalhamos com Diversas Marcas</h2>
+        </div>
+        <div class="brands-ticker fade-in">
+          <ul class="visually-hidden" id="brands-sr-list"></ul>
+          <div class="brands-ticker-track" id="brands-ticker-track" aria-hidden="true"></div>
+        </div>
+        <p class="brands-note fade-in">
+          Marcas e logotipos meramente ilustrativos, sujeitos a substituição. Consulte a disponibilidade para o modelo do seu veículo.
+        </p>
+      </div>
+    </section>
+
+    <!-- AVALIAÇÕES -->
+    <section class="section section-bg-alt" id="avaliacoes">
+      <div class="container">
+        <div class="section__header fade-in">
+          <span class="section__eyebrow">O que dizem sobre nós</span>
+          <h2 class="section__title">Avaliações</h2>
+          <p class="section__subtitle" style="margin-left:auto;margin-right:auto;">
+            A confiança de quem já passou pela nossa oficina.
+          </p>
+        </div>
+
+        <div class="testimonials-carousel fade-in">
+          <div class="testimonials-track" id="testimonials-track"></div>
+        </div>
+        <div class="testimonials-dots" id="testimonials-dots"></div>
+      </div>
+    </section>
+
+    <!-- CTA ORÇAMENTO -->
+    
+
+    <!-- CONTATO E LOCALIZAÇÃO -->
+    <section class="section" id="contato">
+      <div class="container">
+        <div class="section__header fade-in">
+          <span class="section__eyebrow">Fale conosco</span>
+          <h2 class="section__title">Entre em Contato</h2>
+          <p class="section__subtitle" style="margin-left:auto;margin-right:auto;">
+            Preencha o formulário abaixo e solicite uma avaliação para o seu veículo.
+          </p>
+        </div>
+
+        <form class="contact-form contact-form--standalone fade-in" id="contact-form" novalidate>
+          <div class="contact-form-grid">
+            <div class="form-field">
+              <label for="form-name">Nome</label>
+              <input type="text" id="form-name" name="name" autocomplete="name" />
+              <p class="form-error" data-error-for="name" role="alert"></p>
+            </div>
+            <div class="form-field">
+              <label for="form-phone">Telefone</label>
+              <input type="tel" id="form-phone" name="phone" autocomplete="tel" />
+              <p class="form-error" data-error-for="phone" role="alert"></p>
+            </div>
+            <div class="form-field">
+              <label for="form-email">E-mail (opcional)</label>
+              <input type="email" id="form-email" name="email" autocomplete="email" />
+            </div>
+            <div class="form-field">
+              <label for="form-service">Serviço de interesse</label>
+              <select id="form-service" name="service">
+                <option value="">Selecione um serviço</option>
+              </select>
+              <p class="form-error" data-error-for="service" role="alert"></p>
+            </div>
+            <div class="form-field">
+              <label for="form-vehicle-brand">Marca do veículo (opcional)</label>
+              <input type="text" id="form-vehicle-brand" name="vehicleBrand" />
+            </div>
+            <div class="form-field">
+              <label for="form-vehicle-model">Modelo do veículo (opcional)</label>
+              <input type="text" id="form-vehicle-model" name="vehicleModel" />
+            </div>
+            <div class="form-field">
+              <label for="form-vehicle-year">Ano do veículo (opcional)</label>
+              <input type="text" id="form-vehicle-year" name="vehicleYear" inputmode="numeric" />
+            </div>
+            <div class="form-field">
+              <label for="form-best-time">Melhor horário para contato (opcional)</label>
+              <input type="text" id="form-best-time" name="bestTime" placeholder="Ex.: à tarde" />
+            </div>
+            <div class="form-field form-field--full">
+              <label for="form-problem">Descrição do problema</label>
+              <textarea id="form-problem" name="problem"></textarea>
+              <p class="form-error" data-error-for="problem" role="alert"></p>
+            </div>
+            <button type="submit" class="btn btn--whatsapp btn--block form-field--full">
+              <span data-icon-whatsapp aria-hidden="true"></span>
+              Enviar via WhatsApp
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- PERGUNTAS FREQUENTES -->
+    <section class="section section-bg-alt" id="faq">
+      <div class="container">
+        <div class="section__header fade-in">
+          <span class="section__eyebrow">Dúvidas comuns</span>
+          <h2 class="section__title">Perguntas Frequentes</h2>
+        </div>
+        <div class="faq-list" id="faq-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MAPA (faixa em largura total, acima do footer) -->
+  <div class="map-strip">
+    <!-- Placeholder: substituir pelo src real do Google Maps (ver CONTACT.mapsEmbedSrc em js/main.js) -->
+    <iframe
+      data-maps-embed
+      title="Localização da oficina no mapa"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__logo">
+            <img src="images/logo.png" data-workshop-logo-alt alt="Logo da oficina" width="32" height="32" loading="lazy" style="border-radius:6px;object-fit:cover;" />
+            <span data-workshop-name>Oficina</span>
+          </p>
+          <p class="footer__description" data-workshop-description>Descrição curta da oficina.</p>
+          <div class="footer__socials">
+            <a class="footer__social-link" data-social-instagram href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram da oficina">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.2" cy="6.8" r="1" />
+              </svg>
+            </a>
+            <a class="footer__social-link" data-social-facebook href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook da oficina">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                <path d="M15 4h-2a4 4 0 0 0-4 4v3H7v3h2v6h3v-6h2.5l.5-3H12V8.5a1 1 0 0 1 1-1H15V4z" stroke-linejoin="round" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <p class="footer__heading">Links rápidos</p>
+          <nav class="footer__links" aria-label="Links rápidos do rodapé">
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#diferenciais">Diferenciais</a>
+            <a href="#avaliacoes">Avaliações</a>
+            <a href="#contato">Contato</a>
+            <a href="#faq">Perguntas Frequentes</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="footer__heading">Serviços</p>
+          <ul class="footer__links" id="footer-services-list"></ul>
+        </div>
+
+        <div>
+          <p class="footer__heading">Contato</p>
+          <div class="footer__contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <path d="M12 22s7-7.58 7-12.5A7 7 0 0 0 5 9.5C5 14.42 12 22 12 22z" stroke-linejoin="round" />
+              <circle cx="12" cy="9.5" r="2.3" />
+            </svg>
+            <span data-contact-address>Endereço da oficina</span>
+          </div>
+          <div class="footer__contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <path d="M6.6 3h3l1.4 4.5-2.3 1.6a13 13 0 0 0 6.2 6.2l1.6-2.3L21 14.4v3a2 2 0 0 1-2.2 2C11 19 5 13 4.6 5.2A2 2 0 0 1 6.6 3z" stroke-linejoin="round" />
+            </svg>
+            <a data-contact-phone href="#">Telefone</a>
+          </div>
+          <ul class="hours-list" id="footer-hours-list"></ul>
+          <a
+            href="#"
+            class="btn btn--whatsapp btn--sm"
+            style="margin-top: var(--space-4);"
+            data-whatsapp
+            data-whatsapp-message="Olá! Acessei o site da oficina e gostaria de solicitar um orçamento para o meu veículo."
+          >
+            <span data-icon-whatsapp aria-hidden="true"></span>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; <span data-current-year></span> <span data-workshop-name>Oficina</span>. Todos os direitos reservados.</p>
+        <div class="footer__bottom-links">
+          <a href="#politica-de-privacidade">Política de Privacidade</a>
+          <a href="#termos-de-uso">Termos de Uso</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <a
+    href="#"
+    class="whatsapp-float"
+    data-whatsapp
+    data-whatsapp-message="Olá! Acessei o site da oficina e gostaria de solicitar um orçamento para o meu veículo."
+    aria-label="Falar no WhatsApp"
+  >
+    <span data-icon-whatsapp aria-hidden="true"></span>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

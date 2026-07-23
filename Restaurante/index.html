@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Gula-Gula | Restaurante em Sorocaba/SP</title>
+  <meta name="description" content="Gula-Gula - Restaurante em Sorocaba/SP. Cardápio autoral, ambiente aconchegante e atendimento de primeira. Faça sua reserva pelo WhatsApp.">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="site-header">
+    <div class="container header__inner">
+      <a href="#topo" class="logo" aria-label="Gula-Gula - início">
+        <img src="images/logo.svg" alt="Gula-Gula" width="140" height="56" class="logo__img">
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Navegação principal">
+        <ul class="nav__list" id="nav-list">
+          <li><a href="#sobre" class="nav__link">Quem Somos</a></li>
+          <li><a href="#cardapio" class="nav__link">Cardápio</a></li>
+          <li><a href="#depoimentos" class="nav__link">Depoimentos</a></li>
+          <li><a href="#contato" class="nav__link">Reserva</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <a href="#" class="btn btn--whatsapp btn--small" data-wa-btn data-wa-message="Olá! Gostaria de fazer uma reserva no Gula-Gula." target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.48 1.34 5L2 22l5.2-1.36a9.9 9.9 0 0 0 4.84 1.24h.01c5.5 0 9.96-4.46 9.96-9.96C22 6.46 17.54 2 12.04 2zm0 18.2h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.1.81.83-3.02-.2-.31a8.2 8.2 0 0 1-1.26-4.39c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.54.06-.25-.12-1.04-.38-1.99-1.22-.73-.66-1.23-1.46-1.37-1.71-.15-.24-.02-.37.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.24-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.24-.85.83-.85 2.03s.87 2.36 1 2.52c.12.16 1.7 2.6 4.13 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+          <span>WhatsApp</span>
+        </a>
+
+        <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-list">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-overlay" id="nav-overlay"></div>
+
+  <main id="topo">
+
+    <!-- HERO -->
+    <section class="hero" id="hero" aria-label="Apresentação">
+      <div class="hero__slides" id="hero-slides"></div>
+      <div class="hero__overlay"></div>
+      <div class="hero__content container">
+        <h1 class="hero__title">Sabor de verdade, no coração de Sorocaba</h1>
+        <p class="hero__subtitle">Cozinha autoral, ingredientes selecionados e aquele clima de casa que todo mundo ama.</p>
+        <div class="hero__ctas">
+          <a href="#" class="btn btn--primary" data-wa-btn data-wa-message="Olá! Gostaria de fazer uma reserva no Gula-Gula." target="_blank" rel="noopener">Fazer reserva</a>
+          <a href="#cardapio" class="btn btn--ghost" data-scroll-link>Ver cardápio</a>
+        </div>
+      </div>
+      <div class="hero__dots" id="hero-dots" role="tablist" aria-label="Selecionar imagem de destaque"></div>
+    </section>
+
+    <!-- CARDÁPIO -->
+    <section class="section menu-section" id="cardapio" aria-labelledby="cardapio-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title" id="cardapio-title">Cardápio em destaque</h2>
+          <p class="section__subtitle">Uma prévia dos pratos que fazem a fama da casa</p>
+        </div>
+      </div>
+
+      <div class="menu-slider">
+        <button class="menu-slider__arrow menu-slider__arrow--prev" id="menu-prev" aria-label="Prato anterior">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15.4 7.4 14 6l-6 6 6 6 1.4-1.4L10.8 12z"/></svg>
+        </button>
+
+        <div class="menu-slider__viewport" id="menu-viewport">
+          <ul class="menu-slider__track" id="menu-track"></ul>
+        </div>
+
+        <button class="menu-slider__arrow menu-slider__arrow--next" id="menu-next" aria-label="Próximo prato">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8.6 16.6 10 18l6-6-6-6-1.4 1.4L13.2 12z"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="section about-section" id="sobre" aria-labelledby="sobre-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title" id="sobre-title">Sobre o Gula-Gula</h2>
+          <p class="section__subtitle">Nossa história, nosso jeito de receber</p>
+        </div>
+
+        <div class="about__content" id="about-text"></div>
+
+        <div class="about__gallery" id="about-gallery"></div>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section class="section testimonials-section" id="depoimentos" aria-labelledby="depoimentos-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title" id="depoimentos-title">O que dizem sobre nós</h2>
+          <p class="section__subtitle">Depoimentos de quem já provou</p>
+        </div>
+
+        <div class="testimonials" id="testimonials" role="region" aria-roledescription="carrossel" aria-label="Depoimentos de clientes">
+          <div class="testimonials__track" id="testimonials-track"></div>
+          <div class="testimonials__dots" id="testimonials-dots"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER / CONTATO -->
+  <footer class="site-footer" id="contato">
+    <div class="container footer__grid">
+
+      <div class="footer__col">
+        <h3 class="footer__heading">Gula-Gula</h3>
+        <p class="footer__text" id="footer-address"></p>
+        <p class="footer__text" id="footer-phone"></p>
+        <a href="#" class="btn btn--whatsapp" data-wa-btn data-wa-message="Olá! Gostaria de falar com o Gula-Gula." target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.48 1.34 5L2 22l5.2-1.36a9.9 9.9 0 0 0 4.84 1.24h.01c5.5 0 9.96-4.46 9.96-9.96C22 6.46 17.54 2 12.04 2zm0 18.2h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.1.81.83-3.02-.2-.31a8.2 8.2 0 0 1-1.26-4.39c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.54.06-.25-.12-1.04-.38-1.99-1.22-.73-.66-1.23-1.46-1.37-1.71-.15-.24-.02-.37.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.24-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.24-.85.83-.85 2.03s.87 2.36 1 2.52c.12.16 1.7 2.6 4.13 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+          <span>Chamar no WhatsApp</span>
+        </a>
+
+        <div class="footer__social" id="footer-social" aria-label="Redes sociais"></div>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__heading">Horário de funcionamento</h3>
+        <ul class="footer__hours" id="footer-hours"></ul>
+      </div>
+
+      <div class="footer__col footer__col--map">
+        <h3 class="footer__heading">Como chegar</h3>
+        <div class="footer__map">
+          <!-- Placeholder: trocar o src abaixo pelo endereço real gerado em Google Maps > Compartilhar > Incorporar um mapa -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d0000.000000000000!2d-47.4500000!3d-23.5000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMwJzAwLjAiUyA0N8KwMjcnMDAuMCJX!5e0!3m2!1spt-BR!2sbr!4v0000000000000"
+            width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Localização do Gula-Gula no mapa">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container footer__bottom">
+      <p id="footer-copy"></p>
+    </div>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <a href="#" class="whatsapp-float" id="whatsapp-float" data-wa-btn data-wa-message="Olá! Gostaria de fazer uma reserva no Gula-Gula." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.48 1.34 5L2 22l5.2-1.36a9.9 9.9 0 0 0 4.84 1.24h.01c5.5 0 9.96-4.46 9.96-9.96C22 6.46 17.54 2 12.04 2zm0 18.2h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.1.81.83-3.02-.2-.31a8.2 8.2 0 0 1-1.26-4.39c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.54.06-.25-.12-1.04-.38-1.99-1.22-.73-.66-1.23-1.46-1.37-1.71-.15-.24-.02-.37.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.24-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.24-.85.83-.85 2.03s.87 2.36 1 2.52c.12.16 1.7 2.6 4.13 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+  </a>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox__close" id="lightbox-close" aria-label="Fechar imagem ampliada">&times;</button>
+    <img src="" alt="" id="lightbox-img" class="lightbox__img">
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 60" role="img" aria-label="Foguinho Rodas">
+  <defs>
+    <linearGradient id="flame" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff6a1a"/>
+      <stop offset="100%" stop-color="#f6b900"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#flame)" d="M22 4c3 6-2 8-2 13 0 4 3 6 6 6 4 0 7-3 7-8 0-2-1-4-2-6 5 3 9 9 9 16 0 10-8 17-18 17S4 35 4 25c0-9 7-15 12-19 2-1 4-1 6-2z"/>
+  <text x="46" y="30" font-family="Rajdhani, sans-serif" font-weight="700" font-size="22" letter-spacing="0.5" fill="#f6f2e8">FOGUINHO</text>
+  <text x="46" y="49" font-family="Rajdhani, sans-serif" font-weight="700" font-size="22" letter-spacing="2" fill="#f6b900">RODAS</text>
+</svg>
