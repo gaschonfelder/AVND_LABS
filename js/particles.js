@@ -241,10 +241,11 @@ function initHeroParticles() {
     } catch (err) {
       earthPoints = targetBrowser; // fallback silencioso se o fetch falhar (ex: aberto via file://)
     }
+    const globeScale = Math.min(160, width * 0.22) / 170;
     const targetGlobe = sample(earthPoints, isMobile ? 4 : 1).map((p) => ({
-      x: (p.x / 170) * Math.min(160, width * 0.22),
-      y: (p.y / 170) * Math.min(160, width * 0.22),
-      z: p.z,
+      x: p.x * globeScale,
+      y: p.y * globeScale,
+      z: p.z * globeScale,
     }));
 
     const maxLen = Math.max(targetBrowser.length, targetAtom.length, targetGlobe.length);
