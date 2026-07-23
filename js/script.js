@@ -39,19 +39,21 @@ const mocksData = [
     image: 'images/restaurante_mock.png', // PLACEHOLDER — troque por screenshot-restaurante.jpg quando tiver o arquivo real
     link: 'Restaurante/index.html', // TODO: link do mock de restaurante
   },
+
+  {
+    category: 'Foguinho',
+    heading:
+      'Qualidade, precisão e confiança em serviços automotivos para o seu dia a dia.',
+    image: 'images/fog_mock.png', // PLACEHOLDER — troque por screenshot-contabilidade.jpg quando tiver o arquivo real
+    link: 'Foguinho/index.html', // TODO: link do mock de contabilidade
+    strongOverlay: true, // aro do carro deixava a área do texto clara demais
+  },
   {
     category: 'Clínica',
     heading: 'Agendamento online e vitrine de serviços de saúde e estética',
     image: 'images/mock_clinica.png',
     link: 'Clinica/index.html',
     strongOverlay: true, // foto da profissional deixava a área do texto clara demais
-  },
-  {
-    category: 'Contabilidade',
-    heading: 'Apresentação institucional que passa confiança e gera contato',
-    image: 'images/fog_mock.png', // PLACEHOLDER — troque por screenshot-contabilidade.jpg quando tiver o arquivo real
-    link: 'Foguinho/index.html', // TODO: link do mock de contabilidade
-    strongOverlay: true, // aro do carro deixava a área do texto clara demais
   },
   {
     category: 'Oficina Mecânica',
