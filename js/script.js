@@ -37,20 +37,20 @@ const mocksData = [
     category: 'Restaurante',
     heading: 'Cardápio digital com pedido direto no WhatsApp',
     image: 'images/restaurante_mock.png', // PLACEHOLDER — troque por screenshot-restaurante.jpg quando tiver o arquivo real
-    link: '../Restaurante/index.html', // TODO: link do mock de restaurante
+    link: 'Restaurante/index.html', // TODO: link do mock de restaurante
   },
   {
     category: 'Clínica',
     heading: 'Agendamento online e vitrine de serviços de saúde e estética',
     image: 'images/mock_clinica.png',
-    link: '../Clinica/index.html',
+    link: 'Clinica/index.html',
     strongOverlay: true, // foto da profissional deixava a área do texto clara demais
   },
   {
     category: 'Contabilidade',
     heading: 'Apresentação institucional que passa confiança e gera contato',
     image: 'images/fog_mock.png', // PLACEHOLDER — troque por screenshot-contabilidade.jpg quando tiver o arquivo real
-    link: '../Foguinho/index.html', // TODO: link do mock de contabilidade
+    link: 'Foguinho/index.html', // TODO: link do mock de contabilidade
     strongOverlay: true, // aro do carro deixava a área do texto clara demais
   },
   {
@@ -58,7 +58,7 @@ const mocksData = [
     heading:
       'Orçamento e agendamento rápido pra quem precisa consertar o carro',
     image: 'images/mock_mecanica.png', // PLACEHOLDER — troque por screenshot-mecanica.jpg quando tiver o arquivo real
-    link: '../Mecanica/index.html',
+    link: 'Mecanica/index.html',
   },
 ];
 
