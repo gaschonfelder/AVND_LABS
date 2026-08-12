@@ -2,7 +2,7 @@
 // Config — edite aqui
 // ==========================================================================
 
-const WHATSAPP_NUMBER = 'SEUNUMERO'; // ex: 5515999999999
+const WHATSAPP_NUMBER = '5515981384501'; // ex: 5515999999999
 const WHATSAPP_MESSAGE =
   'Olá! Vi seu portfólio e quero um site pro meu negócio.';
 
