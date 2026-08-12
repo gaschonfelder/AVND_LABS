@@ -1,6 +1,4 @@
-// ==========================================================================
-// Config — edite aqui
-// ==========================================================================
+
 
 const WHATSAPP_NUMBER = '5515981384501'; // ex: 5515999999999
 const WHATSAPP_MESSAGE =
@@ -14,8 +12,8 @@ const projectsData = [
     title: 'Presentim',
     description:
       'Presentes virtuais com fotos, lembranças e declarações — uma retrospectiva animada pra quem quer presentear diferente.',
-    image: 'images/presentim-screenshot.png', // PLACEHOLDER — troque por images/presentim-screenshot.jpg quando tiver o arquivo real
-    link: 'https://www.presentim.com.br/', // TODO: link do Presentim no ar
+    image: 'images/presentim-screenshot.png', 
+    link: 'https://www.presentim.com.br/', 
   },
   {
     id: 'varzea',
@@ -23,8 +21,8 @@ const projectsData = [
     title: 'Várzea',
     description:
       'Tabelas, classificação, jogos e resultados dos campeonatos amadores de futebol de várzea de Sorocaba.',
-    image: 'images/varzea-screenshot.png', // PLACEHOLDER — troque por images/varzea-screenshot.jpg quando tiver o arquivo real
-    link: 'https://www.varzeasorocaba.com.br/', // TODO: link do Várzea no ar
+    image: 'images/varzea-screenshot.png', 
+    link: 'https://www.varzeasorocaba.com.br/',
   },
 ];
 
@@ -36,30 +34,30 @@ const mocksData = [
   {
     category: 'Restaurante',
     heading: 'Cardápio digital com pedido direto no WhatsApp',
-    image: 'images/restaurante_mock.png', // PLACEHOLDER — troque por screenshot-restaurante.jpg quando tiver o arquivo real
-    link: 'Restaurante/index.html', // TODO: link do mock de restaurante
+    image: 'images/restaurante_mock.png', 
+    link: 'Restaurante/index.html',
   },
 
   {
     category: 'Foguinho',
     heading:
       'Qualidade, precisão e confiança em serviços automotivos para o seu dia a dia.',
-    image: 'images/fog_mock.png', // PLACEHOLDER — troque por screenshot-contabilidade.jpg quando tiver o arquivo real
-    link: 'Foguinho/index.html', // TODO: link do mock de contabilidade
-    strongOverlay: true, // aro do carro deixava a área do texto clara demais
+    image: 'images/fog_mock.png', 
+    link: 'Foguinho/index.html', 
+    strongOverlay: true, 
   },
   {
     category: 'Clínica',
     heading: 'Agendamento online e vitrine de serviços de saúde e estética',
     image: 'images/mock_clinica.png',
     link: 'Clinica/index.html',
-    strongOverlay: true, // foto da profissional deixava a área do texto clara demais
+    strongOverlay: true,
   },
   {
     category: 'Oficina Mecânica',
     heading:
       'Orçamento e agendamento rápido pra quem precisa consertar o carro',
-    image: 'images/mock_mecanica.png', // PLACEHOLDER — troque por screenshot-mecanica.jpg quando tiver o arquivo real
+    image: 'images/mock_mecanica.png', 
     link: 'Mecanica/index.html',
   },
 ];
